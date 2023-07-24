@@ -7,7 +7,7 @@ const notesCtrl = require('../../controllers/api/notesController');
 // All paths start with '/api/users'
 
 // POST /api/notes
-router.post('/', notesCtrl.index);
+router.get('/', notesCtrl.index);
 
 router.post('/create', notesCtrl.create);
 
