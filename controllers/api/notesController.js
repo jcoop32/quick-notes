@@ -19,10 +19,6 @@ async function create(req, res) {
 }
 
 async function index(req, res) {
-  try {
-    const notes = await Note.find({});
-    res.json(notes);
-  } catch (error) {
-    res.status(400).json(error);
-  }
+  const notes = await Note.find({});
+  res.json(notes);
 }

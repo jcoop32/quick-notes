@@ -1,6 +1,4 @@
 export default function NoteItem({ note }) {
-  console.log(`noteitem ${note}`);
-
   return (
     <div className="card mt-3">
       <div className="card-body col">

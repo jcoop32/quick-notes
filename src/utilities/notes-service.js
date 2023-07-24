@@ -5,7 +5,7 @@ export async function createNoteService(noteData) {
   return note;
 }
 
-export async function getNotesService() {
-  const note = await notesApi.getNotes();
-  return note;
-}
+// export async function getNotesService() {
+//   const note = await notesApi.getNotes();
+//   return note;
+// }

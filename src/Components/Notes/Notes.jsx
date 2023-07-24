@@ -1,22 +1,22 @@
 import { useState, useEffect } from 'react';
 import NoteItem from '../NoteItem/NoteItem';
-import * as userService from '../../utilities/notes-service';
+import * as notesApi from '../../utilities/notes-api';
 
 export default function Notes({ user }) {
   const [notes, setNotes] = useState([]);
 
   /*---works stable, doesnt update list live---*/
-  useEffect(() => {
-    const getNotes = async () => {
-      const response = await fetch('/api/notes/');
-      const json = await response.json();
-      if (response.ok) {
-        setNotes(json);
+  useEffect(
+    function () {
+      async function getNotesA() {
+        const items = await notesApi.getNotes();
+        setNotes(items);
       }
-    };
 
-    getNotes();
-  }, [notes]);
+      getNotesA();
+    },
+    [notes],
+  );
 
   /*---not stable, but works... updates data in real time ---*/
   // async function getNotes() {
