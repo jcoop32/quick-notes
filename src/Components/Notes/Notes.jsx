@@ -16,7 +16,7 @@ export default function Notes({ user }) {
     };
 
     getNotes();
-  }, []);
+  }, [notes]);
 
   /*---not stable, but works... updates data in real time ---*/
   // async function getNotes() {
