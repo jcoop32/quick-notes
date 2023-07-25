@@ -10,7 +10,7 @@ async function create(req, res) {
     // add the user to the db
     const note = await Note.create({
       text: req.body.text,
-      user: { user: req.body.user._id },
+      user: req.body.user,
     });
     res.json(note);
   } catch (err) {
@@ -19,6 +19,6 @@ async function create(req, res) {
 }
 
 async function index(req, res) {
-  const notes = await Note.find({});
+  const notes = await Note.find({}).exec();
   res.json(notes);
 }
