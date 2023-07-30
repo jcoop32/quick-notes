@@ -56,7 +56,7 @@ export default function NewNoteForm({ user }) {
           value={note.text}
           onChange={handleChange}
         />
-        <button type="submit" className="btn btn-primary mb-3 ">
+        <button type="submit" className="btn btn-primary mb-3">
           Add Note
         </button>
       </form>
